@@ -1,12 +1,7 @@
-var gulp        = require('gulp');
-var runSequence = require('run-sequence');
-var config      = require('../gulpConfig');
+const config      = require("../gulpConfig");
+const gulp        = require("gulp");
+const runSequence = require("run-sequence");
 
-gulp.task('default', function(cb) {
-    runSequence(
-        'build',
-        'watch',
-        'browserSync',
-        cb
-    );
+gulp.task("default", (cb) => {
+  runSequence("build", "watch", "browserSync", cb);
 });

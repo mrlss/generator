@@ -1,4 +1,4 @@
-const chalk = require('chalk');
+const chalk = require("chalk");
 const environments = require("gulp-environments");
 const srcPath = "src";
 const destPath = "dist";
@@ -20,10 +20,10 @@ let config = {
     fonts: destPath + "/fonts"
   },
   development: function() {
-    return this.environment === 'development';
+    return this.environment === "development";
   },
   production: function() {
-    return this.environment === 'production';
+    return this.environment === "production";
   },
   setEnvironment: function(environment) {
     this.environment = environment;
@@ -31,17 +31,15 @@ let config = {
   },
   showEnvironment: function() {
     if (this.development()) {
-      console.log(chalk.yellow('Environment: ') + chalk.yellow.bgRed.bold(' ' + this.environment + ' '));
+      console.log(chalk.red("------------------------------------------"));
+      console.log(chalk.yellow("Environment: ") + chalk.yellow.bgRed.bold(" " + this.environment + " "));
+      console.log(chalk.red("------------------------------------------"));
     } else {
-      console.log(chalk.yellow('Environment: ') + chalk.yellow.bgGreen.bold(' ' + this.environment + ' '));
-      console.log(this.production());
+      console.log(chalk.green("------------------------------------------"));
+      console.log(chalk.green("Environment: ") + chalk.white.bgGreen.bold(" " + this.environment + " "));
+      console.log(chalk.green("------------------------------------------"));
     }
   }
 };
-
-console.log('---------------------');
-config.setEnvironment(config.production() ? 'production' : 'development');
-console.log(config.environment);
-console.log('---------------------');
 
 module.exports = config;

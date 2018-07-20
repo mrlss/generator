@@ -1,10 +1,10 @@
-let config = require('../../gulpConfig');
-let gulp = require('gulp');
-let del = require('del');
-var chalk = require('chalk');
-const globby = require('globby');
+const config   = require('../../gulpConfig');
+const gulp     = require('gulp');
+const del      = require('del');
+const chalk    = require('chalk');
+const globby   = require('globby');
 
-function deleteUnused(source, destination) {
+module.exports = (source, destination) => {
   return Promise.all([
     globby(source),
     globby(destination)
@@ -54,5 +54,3 @@ function deleteUnused(source, destination) {
     console.log(chalk.bgRed.white.bold(error));
   });
 };
-
-module.exports = deleteUnused;
