@@ -1,10 +1,10 @@
-const config  = require("../gulpConfig.js");
-const gulp    = require("gulp");
+const config = require('../gulpConfig.js');
+const gulp = require('gulp');
 
-gulp.task("watch", [
-  "copy:watch",
-  "imagemin:watch",
-  "fonts:watch",
+gulp.task('watch', [
+  'copy:watch',
+  'imagemin:watch',
+  'fonts:watch',
   // <% if (templates === 'swig') { %>
   // 'swig:watch',<% } %><% if (templates === 'jade') { %>
   // 'jade:watch',<% } %><% if (templates === 'nunjucks') { %>
@@ -17,6 +17,6 @@ gulp.task("watch", [
   // 'list-pages:watch',<% if (bundler === 'webpack') { %>
   // 'webpack:watch',<% } %><% if (bundler === 'manually') { %>
   // 'sss:watch'<% } %>
-  "html:watch",
-  "sass:watch"
+  'html:watch',
+  'sass:watch'
 ]);

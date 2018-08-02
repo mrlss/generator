@@ -2,6 +2,7 @@ const config          = require("../gulpConfig");
 const gulp            = require("gulp");
 const sass            = require("gulp-sass");
 const sassLint        = require("gulp-sass-lint");
+const browserSync     = require('./browserSync');
 const sourcemaps      = require("gulp-sourcemaps");
 const postcss         = require("gulp-postcss");
 const autoprefixer    = require("autoprefixer");
@@ -50,5 +51,5 @@ gulp.task("sass", () => {
 });
 
 gulp.task("sass:watch", () => {
-  gulp.watch(config.src.sass + "/**/*.{sass,scss}", ["sass"]);
+  gulp.watch(config.src.sass + "/**/*.{scss,sass}", ["sass"]).on('change', browserSync.reload);
 });

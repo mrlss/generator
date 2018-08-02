@@ -1,13 +1,10 @@
-const config = require("../gulpConfig");
-const gulp   = require("gulp");
-const chalk  = require("chalk");
-const del    = require("del");
+const config = require('../gulpConfig');
+const gulp = require('gulp');
+const chalk = require('chalk');
+const del = require('del');
 
-gulp.task("clear", (cb) => {
+gulp.task('clear', cb => {
   return del(config.dest.root).then(paths => {
-    console.log(
-      chalk.bgCyan.bold(" Deleted: "),
-      chalk.magenta.bold(paths.join(" "))
-    );
+    console.log(chalk.bgCyan.bold(' Deleted: '), chalk.magenta.bold(paths.join(' ')));
   });
 });
